@@ -1,6 +1,8 @@
 import 'dart:math';
 
-import 'package:animation_test/widgets/animated_container.dart';
+import 'package:animation_test/helpers/custom_scaffold.dart';
+import 'package:animation_test/widgets/animated_container_demo.dart';
+import 'package:animation_test/widgets/tween_demo.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -28,27 +30,32 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  Widget _button(String name, Widget target) {
+    return MaterialButton(
+      child: Text(name),
+      color: Colors.deepPurple[100],
+      onPressed: () => Navigator.push(
+        context,
+        MaterialPageRoute(builder: (_) => target),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Animation Demos'),
-      ),
-      body: Padding(
+    return CustomScaffold(
+      title: 'Animation Demos',
+      body: Container(
+        margin: const EdgeInsets.only(top: 50.0),
         padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 8.0),
         child: ListView(
           children: [
-            MaterialButton(
-              child: Text('AnimatedContainer'),
-              color: Colors.deepPurple[100],
-              onPressed: () => Navigator.push(
-                context,
-                MaterialPageRoute(builder: (_) => DemoAnimatedContainer()),
-              ),
-            )
+            _button('AnimatedContainer', AnimatedContainerDemo()),
+            _button('TweenBuilder', TweenDemo()),
           ],
         ),
       ),
+      requireBack: false,
     );
   }
 }

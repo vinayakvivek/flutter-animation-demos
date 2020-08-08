@@ -1,5 +1,7 @@
 import 'dart:math';
 
+import 'package:animation_test/helpers/animate_button.dart';
+import 'package:animation_test/helpers/custom_scaffold.dart';
 import 'package:flutter/material.dart';
 
 class SineCurve extends Curve {
@@ -24,13 +26,12 @@ Color randomColor() {
   return Color(0xFFFFFFFF & Random().nextInt(0xFFFFFFFF));
 }
 
-class DemoAnimatedContainer extends StatefulWidget {
+class AnimatedContainerDemo extends StatefulWidget {
   @override
-  _DemoAnimatedContainerState createState() => _DemoAnimatedContainerState();
+  _AnimatedContainerDemoState createState() => _AnimatedContainerDemoState();
 }
 
-class _DemoAnimatedContainerState extends State<DemoAnimatedContainer> {
-
+class _AnimatedContainerDemoState extends State<AnimatedContainerDemo> {
   double _size;
   Color _color;
   double _radius;
@@ -49,10 +50,8 @@ class _DemoAnimatedContainerState extends State<DemoAnimatedContainer> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('AnimatedContainer'),
-      ),
+    return CustomScaffold(
+      title: 'AnimatedContainer',
       body: Center(
         child: AnimatedContainer(
           duration: Duration(milliseconds: 500),
@@ -60,21 +59,12 @@ class _DemoAnimatedContainerState extends State<DemoAnimatedContainer> {
           height: _size,
           decoration: BoxDecoration(
             color: _color,
-            borderRadius: BorderRadius.circular(_radius)
+            borderRadius: BorderRadius.circular(_radius),
+            border: Border.all(color: Colors.white)
           ),
         ),
       ),
-      floatingActionButton: MaterialButton(
-        color: Colors.blueGrey,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(18.0),
-        ),
-        child: Text(
-          'Animate',
-          style: TextStyle(
-            color: Colors.white,
-          ),
-        ),
+      floatingActionButton: AnimateButton(
         onPressed: () => setState(setRandomState),
       ),
     );
