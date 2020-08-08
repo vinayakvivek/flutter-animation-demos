@@ -51,7 +51,7 @@ class _HomePageState extends State<HomePage> {
         child: ListView(
           children: [
             _button('AnimatedContainer', AnimatedContainerDemo()),
-            _button('TweenBuilder', TweenDemo()),
+            _button('TweenAnimationBuilder', TweenDemo()),
           ],
         ),
       ),
