@@ -4,6 +4,7 @@ import 'package:animation_test/helpers/custom_scaffold.dart';
 import 'package:animation_test/widgets/animated_container_demo.dart';
 import 'package:animation_test/widgets/custom_animation_demo.dart';
 import 'package:animation_test/widgets/explicit_animation_builder_demo.dart';
+import 'package:animation_test/widgets/physics_based_demo.dart';
 import 'package:animation_test/widgets/tween_demo.dart';
 import 'package:flutter/material.dart';
 
@@ -56,6 +57,7 @@ class _HomePageState extends State<HomePage> {
             _button('TweenAnimationBuilder', TweenDemo()),
             _button('ExplicitAnimationBuilder', ExplicitAnimationBuilderDemo()),
             _button('CustomAnimation', CustomAnimationDemo()),
+            _button('PhysicsBased', PhysicsBasedAnimationDemo()),
           ],
         ),
       ),
