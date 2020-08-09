@@ -1,5 +1,6 @@
 import 'package:animation_test/helpers/custom_scaffold.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/physics.dart';
 
 class PhysicsBasedAnimationDemo extends StatefulWidget {
   @override
@@ -33,15 +34,29 @@ class _PhysicsBasedAnimationDemoState extends State<PhysicsBasedAnimationDemo>
     super.dispose();
   }
 
-  void _runAnimation() {
+  void _runAnimation(Offset pixelsPerSecond, Size size) {
     _animation = _controller.drive(
       AlignmentTween(
         begin: _dragAlignment,
         end: Alignment.center,
       ),
     );
-    _controller.reset();
-    _controller.forward();
+
+    // Calculate the velocity relative to the unit interval, [0,1],
+    // used by the animation controller.
+    final unitsPerSecondX = pixelsPerSecond.dx / size.width;
+    final unitsPerSecondY = pixelsPerSecond.dy / size.height;
+    final unitsPerSecond = Offset(unitsPerSecondX, unitsPerSecondY);
+    final unitVelocity = unitsPerSecond.distance;
+
+    const spring = SpringDescription(
+      mass: 30,
+      stiffness: 1,
+      damping: 1,
+    );
+
+    final simulation = SpringSimulation(spring, 0, 1, -unitVelocity);
+    _controller.animateWith(simulation);
   }
 
   @override
@@ -59,7 +74,7 @@ class _PhysicsBasedAnimationDemoState extends State<PhysicsBasedAnimationDemo>
             );
           });
         },
-        onPanEnd: (_) => _runAnimation(),
+        onPanEnd: (details) => _runAnimation(details.velocity.pixelsPerSecond, size),
         child: Align(
           alignment: _dragAlignment,
           child: Card(
