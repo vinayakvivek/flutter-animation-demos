@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 
 class AnimateButton extends StatelessWidget {
 
+  final String title;
   final Function onPressed;
-  AnimateButton({ @required this.onPressed });
+  AnimateButton({ this.title = 'Animate', @required this.onPressed });
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +14,7 @@ class AnimateButton extends StatelessWidget {
         borderRadius: BorderRadius.circular(18.0),
       ),
       child: Text(
-        'Animate',
+        title,
         style: TextStyle(
           color: Colors.white,
         ),

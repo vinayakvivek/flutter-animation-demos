@@ -19,9 +19,10 @@ class CustomScaffold extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
       body: Stack(
         children: [
-          StarsBackground(),
+          // StarsBackground(),
           Container(
             margin: const EdgeInsets.fromLTRB(20.0, 50.0, 20.0, 0.0),
             height: 50,

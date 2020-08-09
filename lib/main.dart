@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:animation_test/helpers/custom_scaffold.dart';
 import 'package:animation_test/widgets/animated_container_demo.dart';
+import 'package:animation_test/widgets/explicit_animation_builder_demo.dart';
 import 'package:animation_test/widgets/tween_demo.dart';
 import 'package:flutter/material.dart';
 
@@ -52,6 +53,7 @@ class _HomePageState extends State<HomePage> {
           children: [
             _button('AnimatedContainer', AnimatedContainerDemo()),
             _button('TweenAnimationBuilder', TweenDemo()),
+            _button('ExplicitAnimationBuilder', ExplicitAnimationBuilderDemo()),
           ],
         ),
       ),
