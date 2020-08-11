@@ -4,12 +4,14 @@ import 'package:animation_test/helpers/custom_scaffold.dart';
 import 'package:animation_test/widgets/animated_container_demo.dart';
 import 'package:animation_test/widgets/custom_animation_demo.dart';
 import 'package:animation_test/widgets/explicit_animation_builder_demo.dart';
+import 'package:animation_test/widgets/gesture_controlled_animation_demo.dart';
 import 'package:animation_test/widgets/physics_based_demo.dart';
 import 'package:animation_test/widgets/tween_demo.dart';
 import 'package:flutter/material.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(ProviderScope(child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -58,6 +60,7 @@ class _HomePageState extends State<HomePage> {
             _button('ExplicitAnimationBuilder', ExplicitAnimationBuilderDemo()),
             _button('CustomAnimation', CustomAnimationDemo()),
             _button('PhysicsBased', PhysicsBasedAnimationDemo()),
+            _button('GestureControlled', GestureControlledAnimationDemo()),
           ],
         ),
       ),
