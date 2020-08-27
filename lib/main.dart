@@ -5,6 +5,7 @@ import 'package:animation_test/widgets/animated_container_demo.dart';
 import 'package:animation_test/widgets/custom_animation_demo.dart';
 import 'package:animation_test/widgets/explicit_animation_builder_demo.dart';
 import 'package:animation_test/widgets/gesture_controlled_animation_demo.dart';
+import 'package:animation_test/widgets/gesture_controlled_demo.dart';
 import 'package:animation_test/widgets/physics_based_demo.dart';
 import 'package:animation_test/widgets/tween_demo.dart';
 import 'package:flutter/material.dart';
@@ -60,7 +61,7 @@ class _HomePageState extends State<HomePage> {
             _button('ExplicitAnimationBuilder', ExplicitAnimationBuilderDemo()),
             _button('CustomAnimation', CustomAnimationDemo()),
             _button('PhysicsBased', PhysicsBasedAnimationDemo()),
-            _button('GestureControlled', GestureControlledAnimationDemo()),
+            _button('GestureControlledAnimation', GestureControlledDemo()),
           ],
         ),
       ),

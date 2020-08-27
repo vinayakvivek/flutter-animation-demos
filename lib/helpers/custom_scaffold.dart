@@ -1,5 +1,3 @@
-import 'package:animation_test/helpers/animate_button.dart';
-import 'package:animation_test/helpers/stars_background.dart';
 import 'package:flutter/material.dart';
 
 class CustomScaffold extends StatelessWidget {
@@ -23,6 +21,7 @@ class CustomScaffold extends StatelessWidget {
       body: Stack(
         children: [
           // StarsBackground(),
+          body,
           Container(
             margin: const EdgeInsets.fromLTRB(20.0, 50.0, 20.0, 0.0),
             height: 50,
@@ -50,7 +49,6 @@ class CustomScaffold extends StatelessWidget {
               ],
             ),
           ),
-          body
         ],
       ),
       floatingActionButton: requireBack ? floatingActionButton : Container(),

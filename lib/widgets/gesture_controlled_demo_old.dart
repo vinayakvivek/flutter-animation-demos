@@ -46,8 +46,10 @@ class _GestureControlledAnimationDemoState
 
   @override
   void initState() {
-    _controller =
-        AnimationController(vsync: this, duration: const Duration(seconds: 1));
+    _controller = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 1),
+    );
     animationProvider = ChangeNotifierProvider((_) {
       return AnimationNotifier(_controller);
     });
