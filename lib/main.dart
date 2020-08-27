@@ -4,7 +4,6 @@ import 'package:animation_test/helpers/custom_scaffold.dart';
 import 'package:animation_test/widgets/animated_container_demo.dart';
 import 'package:animation_test/widgets/custom_animation_demo.dart';
 import 'package:animation_test/widgets/explicit_animation_builder_demo.dart';
-import 'package:animation_test/widgets/gesture_controlled_animation_demo.dart';
 import 'package:animation_test/widgets/gesture_controlled_demo.dart';
 import 'package:animation_test/widgets/physics_based_demo.dart';
 import 'package:animation_test/widgets/tween_demo.dart';
@@ -59,9 +58,9 @@ class _HomePageState extends State<HomePage> {
             _button('AnimatedContainer', AnimatedContainerDemo()),
             _button('TweenAnimationBuilder', TweenDemo()),
             _button('ExplicitAnimationBuilder', ExplicitAnimationBuilderDemo()),
-            _button('CustomAnimation', CustomAnimationDemo()),
+            _button('Custom', CustomAnimationDemo()),
             _button('PhysicsBased', PhysicsBasedAnimationDemo()),
-            _button('GestureControlledAnimation', GestureControlledDemo()),
+            _button('GestureControlled', GestureControlledDemo()),
           ],
         ),
       ),

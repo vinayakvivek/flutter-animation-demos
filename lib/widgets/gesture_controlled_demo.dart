@@ -59,7 +59,7 @@ class GestureControlledDemo extends HookWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  'Drag vertically on the screen',
+                  'Drag up vertically on the screen',
                   style: TextStyle(color: Colors.white),
                 ),
                 SizedBox(height: 20.0,),
