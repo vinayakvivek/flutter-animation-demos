@@ -1,16 +1,18 @@
-# animation_test
+# Flutter Animation Demos 
 
-A new Flutter project.
+<img src="https://cdn.worldvectorlogo.com/logos/flutter.svg" height="50">
 
-## Getting Started
+A simple flutter app to showcase different ways to animate stuffs in flutter. Created this repo mainly as a future reference.
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Animations
+- [AnimatedContainer](https://github.com/vinayakvivek/flutter-animation-demos/blob/master/lib/widgets/animated_container_demo.dart)
+- [TweenAnimationBuilder](https://github.com/vinayakvivek/flutter-animation-demos/blob/master/lib/widgets/tween_demo.dart)
+- [Explicit Animation](https://github.com/vinayakvivek/flutter-animation-demos/blob/master/lib/widgets/explicit_animation_builder_demo.dart)
+  - If you are using `flutter_hooks`, you should probably use `useAnimationController` hook. Makes you life a lot easier. Checkout `GestureControlled` in this list.
+- [Using AnimatedWidget](https://github.com/vinayakvivek/flutter-animation-demos/blob/master/lib/widgets/custom_animation_demo.dart)
+  - This example is from the official flutter animation series.
+- [Physics based](https://github.com/vinayakvivek/flutter-animation-demos/blob/master/lib/widgets/physics_based_demo.dart)
+  - AnimationController `animateWith` is the focus in this.
+- [GestureControlled](https://github.com/vinayakvivek/flutter-animation-demos/blob/master/lib/widgets/gesture_controlled_demo.dart)
+  - Very useful template. 
+  - Updates the animation controller according to vertical drag update, and this change is notified in other Widgets using [river_pod](https://github.com/rrousselGit/river_pod)
